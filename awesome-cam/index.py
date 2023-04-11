@@ -1,6 +1,9 @@
 from flask import Flask, jsonify, request
 
+from flask_cors import CORS
+
 app = Flask(__name__)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 events = [
     { 'date': '2023-04-10', 'time':'14:31:23', 'camera':'prototype', 'location':'sw gate', 'image':'test0', },
